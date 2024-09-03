@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counter</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.9)),url(https://images.unsplash.com/photo-1527295110-5145f6b148d0?q=80&w=2031&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+        }
+        main{
+            width: 300px;
+            height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            color: #fff;
+            gap: 10px;
+            backdrop-filter: blur(10px);
+            border-radius: 10px;
+        }
+        .btn-container{
+            width: 100%;
+
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .btn{
+            padding:5px 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <h1>Count Is : <span id="count">0</span> </h1>
+        <div class="btn-container">
+            <button class="btn" id="addBtn">Add</button>
+            <button class="btn" id="minusBtn">Minus</button>
+            <button class="btn" id="resetBtn">Reset</button>
+
+        </div>
+    </main>
+    <script>
+        const count = document.getElementById('count');
+        const addBtn = document.getElementById('addBtn');
+        const minusBtn = document.getElementById('minusBtn');
+        const resetBtn = document.getElementById('resetBtn');
+        let countValue = 0;
+
+        addBtn.addEventListener('click', ()=>{
+            countValue++;
+            count.innerText = countValue;
+            console.log(countValue);
+            
+            
+        })
+        minusBtn.addEventListener('click', ()=>{
+            countValue--;
+            count.innerText = countValue;
+            console.log(countValue);
+        })
+        resetBtn.addEventListener('click', ()=>{
+            countValue = 0;
+            count.innerText = countValue;
+            console.log(countValue);
+        })
+    </script>
+</body>
+
+</html>
